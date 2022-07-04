@@ -53,7 +53,7 @@ def do_eval(args):
              recall_dict['2_in_10'], recall_dict['5_in_10']))
     elif args.loss_type == 'L2': 
         scores = [x[0] for x in scores]
-        mean_score = sum(scores) / len(scores)
+        mean_score = np.mean(scores)
         cor = evaluate.evaluate_cor(scores, labels)
         print('mean score: %.6f\nevaluation cor results:%.6f' %
             (mean_score, cor))
