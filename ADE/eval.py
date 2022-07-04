@@ -45,7 +45,7 @@ def do_eval(args):
 
     if args.loss_type == 'CLS': 
         recall_dict = evaluate.evaluate_Recall(list(zip(scores, labels)))
-        mean_score = sum(scores) / len(scores)
+        mean_score = np.mean(scores)
         print('mean score: %.6f' % mean_score)
         print('evaluation recall result:')
         print('1_in_2: %.6f\t1_in_10: %.6f\t2_in_10: %.6f\t5_in_10: %.6f' %
